@@ -1,0 +1,162 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart Project</title>
+
+    <!-- Favicon liked here -->
+    <link rel="shortcut icon" href="images/Logo.png" type="image/x-icon">
+
+    <!-- Css file is linked here -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google font is linked here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- This section navbar -->
+    <nav class="container">
+        <div class="logo">
+            <img src="images/Logo.png" alt="logo">
+            <p class="logo_p">FASHION</p>
+        </div>
+        <input type="checkbox" id="sidebar-active">
+        <label for="sidebar-active">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#E6C744" class="open-sidebar-button"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+        </label>
+
+        <label for="sidebar-active" id="overlay"></label>
+        <div class="links-container">
+            <label for="sidebar-active">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#E6C744" class="close-sidebar-button"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </label>
+
+            <ul>
+                <a href="index.html" class="nav_active_class">HOME</a>
+                <a href="shope.html" class="nav_active_class active">SHOP</a>
+                <a href="cart.html" class="nav_active_class">CART</a>
+                <a href="login.html" class="nav_active_class">LOGIN</a>
+                <a href="sigin.html" class="nav_active_class">SIGIN</a>
+                <a href="profile.html" class="nav_active_class">PROFILE</a>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- This section contain a bg-Img and text image -->
+     <div class="shop_txt_img">
+        <p class="shope_para">#Stayhome</p>
+     </div>
+
+    <!-- This section contain -->
+    <div class="shop_main_container">
+        <div class="filter">
+            <div class="filter_1">
+                <p class="shop_mini_heading">Price Range</p>
+                <span class="checkbox_txt"><input type="checkbox" class="checkbox">$0 to $25</span>
+                <span class="checkbox_txt"><input type="checkbox" class="checkbox">$25 to $50</span>
+                <span class="checkbox_txt"><input type="checkbox" class="checkbox">$50 to $100</span>
+                <span class="checkbox_txt"><input type="checkbox" class="checkbox">$100 onwards</span>
+
+                <hr>
+
+                <p class="shop_mini_heading">Star Rating</p>
+                <span class="range_txt" class="checkbox_txt">1<input type="range" class="range" min="0" max="5">5</span>
+
+                <button class="utility_btn filter_btn">Apply Filter</button>
+            </div>
+        </div>
+
+        <div class="card_seach_utilitu_btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" class="shop_search" placeholder="search">
+
+            <div class="btn_container">
+                <button class="utility_btn shop_filter_btn active_shope" onclick="allProduct()">All</button>
+                <button class="utility_btn shop_filter_btn men">Mens</button>
+                <button class="utility_btn shop_filter_btn women">Womens</button>
+                <button class="utility_btn shop_filter_btn Jewelery">Jewellery</button>
+                <button class="utility_btn shop_filter_btn Electronic">Electronic</button>
+            </div>
+
+            <div class="card_container shop_card_container">
+
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer section starts here-->
+    <section class="footer">
+        <div class="footer_content container">
+            <div class="footer1">
+                <p class="footer_logo">FASHION</p>
+                <p class="footer_txt">
+                    Complete your style with awesome <br>clothes from us.
+                </p>
+            </div>
+
+            <div class="footer2">
+                <p class="footer_mini_para">
+                    Quick Link
+                </p>
+                <p class="footer_txt">
+                    Home
+                </p>
+                <p class="footer_txt">
+                    LogIn
+                </p>
+                <p class="footer_txt">
+                    SigIn
+                </p>
+                <p class="footer_txt">
+                    Profile
+                </p>
+                <p class="footer_txt">
+                    Shop
+                </p>
+            </div>
+
+            <div class="footer2">
+                <p class="footer_mini_para">
+                    Products
+                </p>
+                <p class="footer_txt">
+                    Men's Wear
+                </p>
+                <p class="footer_txt">
+                    Women's Wear
+                </p>
+                <p class="footer_txt">
+                    Electronic
+                </p>
+                <p class="footer_txt">
+                    Jewelery
+                </p>
+               
+            </div>
+
+            <div class="footer2">
+                <p class="footer_mini_para">
+                    Legal
+                </p>
+                <p class="footer_txt">
+                    Terms & condition
+                </p>
+                <p class="footer_txt">
+                    Privacy Policy
+                </p>
+            </div>
+        </div>
+     </section>
+
+    <!-- Font awsome kit linked here -->
+    <script src="https://kit.fontawesome.com/a6110cc4e0.js" crossorigin="anonymous"></script>
+
+    <!-- JS is linked here-->
+    <script src="shope.js"></script>
+</body>
+</html>
