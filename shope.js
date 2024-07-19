@@ -29,7 +29,7 @@ function renderProduct(data) {
                 ${renderStar(element.rating.rate)}
             </div>
             <div class="cost_cart_btn">
-                <p class="cost">₹${(element.price*10).toFixed(2)}</p>
+                <p class="cost">${(element.price*10).toFixed(2)}₹</p>
                 <button class="add_to_cart" data-product-id="${element.id}" data-product-name="${(element.price*10).toFixed(2)}" data-product-price="${element.price}" data-product-img="${element.image}"><img src="images/cart2.png" alt="cart"></button>
             </div>
         </div>
@@ -152,10 +152,10 @@ document.querySelector('.filter_btn').addEventListener('click', () => {
             filteredData = filteredData.filter(product => {
                 let price = product.price;
                 return priceFilters.some(filter => {
-                    if (filter === "$0 to $25" && price <= 25) return true;
-                    if (filter === "$25 to $50" && price > 25 && price <= 50) return true;
-                    if (filter === "$50 to $100" && price > 50 && price <= 100) return true;
-                    if (filter === "$100 onwards" && price > 100) return true;
+                    if (filter === "100₹ to 250₹" && price <= 25) return true;
+                    if (filter === "250₹ to 500₹" && price > 25 && price <= 50) return true;
+                    if (filter === "500₹ to 1000₹" && price > 50 && price <= 100) return true;
+                    if (filter === "₹1000 onwards" && price > 100) return true;
                     return false;
                 });
             });
