@@ -7,7 +7,8 @@ let conpassword = document.getElementById('confirm_password');
 let sigin_btn = document.querySelector('.SignIn_btn');
 
 let error = document.querySelector('.error')
-error.style.color = 'red';
+error.style.color = 'blue';
+error.style.fontSize='20px'
 
 sigin_btn.addEventListener('click', function (e) {
     e.preventDefault()

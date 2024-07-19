@@ -3,7 +3,8 @@ let password = document.getElementById('password');
 
 let login_btn = document.querySelector('.LogIn_btn');
 let error = document.querySelector('.error');
-error.style.color = 'red';
+error.style.color = 'blue';
+error.style.fontSize='20px'
 
 function generateToken() {
     return Math.random().toString(36).substr(2);
