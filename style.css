@@ -7,6 +7,7 @@
 }
 
 body{
+    background: linear-gradient(to right, #eac2c2, #e7c9e7, #c2d7ea);
     font-family: "Poppins", sans-serif;
 }
 
@@ -39,6 +40,7 @@ body{
 
 /*Css of section nav*/
 nav{
+
     height: 80px;
     background-color: transparent;
     display: flex;
@@ -180,7 +182,7 @@ nav .home-link{
 
 /*Css of section Hero*/
 .backgound_box{
-    background-color: #F4F6F5;
+    background-color: #ffffff;
     background-size: cover;
     width: 100%;
     height: 600px;
@@ -624,7 +626,7 @@ ul li img{
 .card{
     height: 300px;
     width: 240px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgb(215, 138, 138) 0px 2px 8px 0px;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
@@ -747,7 +749,7 @@ ul li img{
     .card{
         height: 305px;
         width: 210px;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        box-shadow: rgb(215, 138, 138) 0px 2px 8px 0px;
         border-radius: 25px;
         display: flex;
         flex-direction: column;
@@ -768,7 +770,7 @@ ul li img{
     .card{
         height: 230px;
         width: 170px;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        box-shadow: rgb(215, 138, 138) 0px 2px 8px 0px;
         border-radius: 15px;
         display: flex;
         flex-direction: column;
@@ -794,7 +796,7 @@ ul li img{
     .card{
         height: 230px;
         width: 150px;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        box-shadow: rgb(215, 138, 138) 0px 2px 8px 0px;
         border-radius: 15px;
         display: flex;
         flex-direction: column;
@@ -838,7 +840,7 @@ ul li img{
     .card{
         height: 230px;
         width: 135px;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+       box-shadow: rgb(215, 138, 138) 0px 2px 8px 0px;
         border-radius: 15px;
         display: flex;
         flex-direction: column;
