@@ -1158,8 +1158,11 @@ ul li img{
 
 /*Css of LogIn SigIn and profile Start here*/
 .login-hero{
+    background: linear-gradient(to right, #c06c84, #6c5b7b, #355c7d);
+    box-shadow: rgb(67, 8, 8) 0px 2px 8px 0px;
     width: 100%;
     margin-bottom: 80px;
+    border-radius: 1%;
 }
 
 .login-para-heading{
@@ -1169,8 +1172,8 @@ ul li img{
 }
 
 .login-para{
-    font-size: 26px;
-    color: #7F7F7F;
+    font-size: 25px;
+    color: #000000;
     padding: 20px;
     font-weight: 300;
 }
@@ -1180,6 +1183,7 @@ form{
     display: flex;
     flex-direction: column;
     gap: 40px;
+
 }
 
 input{
@@ -1187,12 +1191,16 @@ input{
     display: flex;
     padding: 10px;
     height: 45px;
-    color: #7F7F7F;
-    border: 2px soild #7F7F7F;
+    color: black;
+    border: 2px soild black;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
 }
 
 label{
-    color: #7F7F7F;
+    font-size: 18px;
+    color:black;
 }
 
 .edit-password{
