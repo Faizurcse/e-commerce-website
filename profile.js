@@ -1,13 +1,15 @@
 let currUser = JSON.parse(localStorage.getItem('currUser'));
 
-if(currUser){
-
-}
-else{
+if(!currUser){
     alert('User dose not exist');
     alert('You are redirecting to Login Page')
     window.location.href = './login.html'
 }
+// else{
+//     alert('User dose not exist');
+//     alert('You are redirecting to Login Page')
+//     window.location.href = './login.html'
+// }
 
 
 //The below code change the user name.
@@ -15,8 +17,8 @@ else{
 let first_name = document.getElementById('first_name');
 let last_name = document.getElementById('last_name');
 let error = document.querySelector('.error');
-
-error.style.color = 'red'
+error.style.color = 'blue';
+error.style.fontSize='20px'
 
 let profile_btn = document.querySelector('.profile_btn');
 
@@ -37,6 +39,7 @@ profile_btn.addEventListener('click',(e) => {
 
             localStorage.setItem('users', JSON.stringify(users));
             alert('Profile updated successfully.')
+            window.location.href = './shope.html';
         }
     }
 })

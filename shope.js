@@ -29,8 +29,8 @@ function renderProduct(data) {
                 ${renderStar(element.rating.rate)}
             </div>
             <div class="cost_cart_btn">
-                <p class="cost">$${element.price.toFixed(2)}</p>
-                <button class="add_to_cart" data-product-id="${element.id}" data-product-name="${element.title}" data-product-price="${element.price}" data-product-img="${element.image}"><img src="images/cart2.png" alt="cart"></button>
+                <p class="cost">₹${(element.price*10).toFixed(2)}</p>
+                <button class="add_to_cart" data-product-id="${element.id}" data-product-name="${(element.price*10).toFixed(2)}" data-product-price="${element.price}" data-product-img="${element.image}"><img src="images/cart2.png" alt="cart"></button>
             </div>
         </div>
         `;

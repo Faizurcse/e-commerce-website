@@ -15,7 +15,7 @@ login_btn.addEventListener('click', (e) => {
     if (email.value === '' || password.value === '') {
         error.textContent = 'Please enter all details.';
     } else {
-        error.textContent = '';
+         error.textContent = '';
         let users = JSON.parse(localStorage.getItem("users") ?? "[]");
         if (users.length > 0) {
             let user = users.find((user) => user.email === email.value);

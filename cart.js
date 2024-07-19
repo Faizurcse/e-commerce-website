@@ -12,7 +12,7 @@ if (currUser) {
             cartCardContainer.innerHTML = '';
 
             productArr.forEach((element, index) => {
-                totalAmount += element.price;
+                totalAmount += (element.price*10);
 
                 cartCardContainer.innerHTML += `
                 <div class="card" data-index="${index}">
@@ -22,7 +22,7 @@ if (currUser) {
                     <p class="product_name">
                         ${element.name}
                     </p>
-                    <p class="cost">$${element.price.toFixed(2)}</p>
+                    <p class="cost">₹${(element.price*10).toFixed(2)}</p>
                     <div class="cost_cart_btn">
                         <button class="cart_btn">Remove</button>
                     </div>
@@ -30,7 +30,7 @@ if (currUser) {
                 `;
             });
 
-            total.textContent = `Total : $${totalAmount.toFixed(2)}`;
+            total.textContent = `Total : ₹${totalAmount.toFixed(2)}`;
 
             attachRemoveEventListeners();
         }
