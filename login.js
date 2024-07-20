@@ -40,3 +40,8 @@ login_btn.addEventListener('click', (e) => {
     }
 });
 
+// click On Logo Goto SigIn
+
+function clickOnLogoGotoSigIn(){
+        window.location.href = './sigin.html'
+}

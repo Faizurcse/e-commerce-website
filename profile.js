@@ -82,3 +82,9 @@ let Logout_btn = document.querySelector('.Logout_btn');
 Logout_btn.addEventListener('click', ()=> {
     localStorage.removeItem('currUser');
 })
+
+
+// click On Logo Goto home
+function clickOnLogoGotoHome(){
+    window.location.href = './index.html'
+}

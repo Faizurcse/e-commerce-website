@@ -47,3 +47,9 @@ sigin_btn.addEventListener('click', function (e) {
         error.textContent = 'Please make sure Password and Confirm Password is equal'
     }
 })
+
+// click On Logo Goto home
+
+function clickOnLogoGotoHome(){
+    window.location.href = './index.html'
+}

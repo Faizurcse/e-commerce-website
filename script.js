@@ -77,3 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchProducts("men's clothing", menContainer);
     fetchProducts("women's clothing", womenContainer);
 });
+
+// click On Logo Goto Home screen
+

@@ -79,4 +79,8 @@ if (currUser) {
 }
 
 
+// click On Logo Goto shope screen
 
+function clickOnLogoGotoShope(){
+    window.location.href = './shope.html';
+}

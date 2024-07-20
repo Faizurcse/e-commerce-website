@@ -182,3 +182,11 @@ searchInput.addEventListener('input', (e) => {
     });
 });
 
+
+// click On Logo Goto shope screen
+
+function clickOnLogoGotoHome(){
+    window.location.href = './index.html';
+}
+
+
