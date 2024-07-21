@@ -90,7 +90,8 @@ nav ul a{
 }
 
 nav ul a:hover, .active{
-    color: #E6C744 !important;
+     color: #E6C744 !important;  /*!important, which means it has the highest priority. */
+    /* color: #0d0d0c ; because of important its not working*/
     border-bottom: 2px solid #E6C744;
     transition: ease-in-out 0.2s;
 }
@@ -163,7 +164,7 @@ nav .home-link{
     .hidden{
         display: none;
     }
-
+/* ~ .links-container: This is the general sibling combinator (~) for nav checkbox(humsburger)*/
     #sidebar-active:checked ~ .links-container{
         right: 0;
     }
