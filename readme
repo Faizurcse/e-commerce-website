@@ -25,3 +25,73 @@ Mockaroo: Allows you to generate custom mock data based on your schema.
 JSONPlaceholder: Offers a free online REST API for testing with common resources.
 Reqres: Provides a set of common resources for RESTful API testing.
 These platforms are designed to help developers test and prototype their applications efficiently. -->
+
+
+<!-- function generateToken() {
+    return Math.random().toString(36).substr(2);
+} -->
+
+<!-- In Summary
+Base-36 uses digits (0-9) and letters (a-z) to represent numbers.
+Converting a number to base-36 gives us a mix of digits and letters, which makes the string more unique and varied.
+Example: The number 0.123456789 becomes 0.4f5g67 in base-36. -->
+
+<!-- Removing "0.":
+
+The .substr(2) method is used to remove these first two characters ("0."). This method extracts a substring starting from the third character (index 2) of the string.
+In our example, starting from the third character of 0.4f5g67 gives 4f5g67. -->
+
+<!-- Random Number Range: Math.random() generates a floating-point number between 0 (inclusive) and 1 (exclusive) -->
+
+<!-- Yes, the .toString(36) method converts a number into a string using base-36, which includes digits 0-9 and letters a-z. This conversion allows the resulting string to contain a mix of numbers and letters, making it a convenient way to generate a short, random-looking alphanumeric string. -->
+
+
+<!-- If you use .toString(26), it converts the number to a base-26 string, which uses only the digits 0-9 and the letters a-p. Base-26 doesn't use the full range of letters a-z; it stops at p because it only needs 26 unique characters to represent numbers in that base. -->
+
+
+<!-- Explanation of Bases
+Base 10 (Decimal): Uses digits 0-9.
+Base 16 (Hexadecimal): Uses digits 0-9 and letters a-f.
+Base 26: Uses digits 0-9 and letters a-p.
+Base 36: Uses digits 0-9 and letters a-z.
+When you reduce the base below 26, fewer letters are used. For instance:
+
+Base 15: Uses digits 0-9 and letters a-e. -->
+
+<!-- ### JSON.parse() is a method that parses a JSON string and converts it into a JavaScript object. -->
+
+<!-- ##For each checked checkbox (el), the closest('span') method is used to find the closest ancestor span element. The closest method searches up the DOM tree from the current element (el) until it finds an element that matches the specified selector ('span'). -->
+
+<!-- ##The some() method in JavaScript is an array method that tests whether at least one element in the array passes the test implemented by the provided function. It returns a Boolean value (true or false). -->
+
+<!--##The some() method executes the callback function once for each element present in the array until it finds one where the callback returns a truthy value (a value that is not null, undefined, 0, false, NaN, or an empty string). If such an element is found, some() immediately returns true. Otherwise, some() returns false.  -->
+
+<!-- ##Razorpay does not automatically understand that the amount is in paise if you provide it in rupees. You must explicitly convert the amount from rupees to paise by multiplying it by 100 before passing it to Razorpay. This is necessary because Razorpay's API expects the amount to be in the smallest currency unit (paise for INR). -->
+
+<!-- INR to Paise: 1 INR = 100 paise
+If you want to charge 250 INR, you must pass 250 * 100 = 25000 paise to Razorpay. -->
+
+<!-- Local storage is a convenient way to store data on the client side that persists even after the browser is closed. By storing the rzp_checkout_anon_id in local storage, Razorpay ensures that the session data is retained across different browsing sessions, providing a seamless user experience. -->
+
+<!-- <!-- Including a JavaScript library -->
+<!-- <script src="https://example.com/library.js"></script> 
+
+<!-- Including a CSS file -->
+<!-- <link rel="stylesheet" href="https://example.com/styles.css"> -->
+ 
+
+<!-- above is similar as below -->
+
+ <!-- // Importing a JavaScript library
+import SomeLibrary from 'some-library';
+
+// Importing a CSS file
+import './styles.css';
+ -->
+
+ <!-- position: absolute;
+Purpose: This property removes the element from the normal document flow and positions it relative to its nearest positioned ancestor (i.e., an ancestor element with a position value other than static).
+Behavior:
+The element is positioned according to the top, right, bottom, and left properties.
+It does not affect the position of other elements in the document flow.
+If no positioned ancestor is found, it will be positioned relative to the initial containing block (typically the viewport). -->

@@ -7,7 +7,7 @@ error.style.color = 'blue';
 error.style.fontSize='20px'
 
 function generateToken() {
-    return Math.random().toString(36).substr(2);
+    return Math.random().toString(36).slice(2);
 }
 
 login_btn.addEventListener('click', (e) => {
@@ -17,6 +17,7 @@ login_btn.addEventListener('click', (e) => {
     } else {
          error.textContent = '';
         let users = JSON.parse(localStorage.getItem("users") ?? "[]");
+        
         if (users.length > 0) {
             let user = users.find((user) => user.email === email.value);
             if (user) {

@@ -11,7 +11,8 @@ let shop_card_container = document.querySelector('.shop_card_container');
 
 // Function to render products
 function renderProduct(data) {
-    shop_card_container.innerHTML = ``;
+
+     shop_card_container.innerHTML = ``;
 
     data.forEach(element => {
         shop_card_container.innerHTML += `
@@ -23,31 +24,33 @@ function renderProduct(data) {
                 ${element.category}
             </p>
             <p class="product_name">
-                ${element.title}
+            ${element.title}
             </p>
             <div class="rating" id="rating-${element.id}">
-                ${renderStar(element.rating.rate)}
+            ${renderStar(element.rating.rate)}
             </div>
             <div class="cost_cart_btn">
-                <p class="cost">${(element.price*10).toFixed(2)}₹</p>
-                <button class="add_to_cart" data-product-id="${element.id}" data-product-name="${(element.price*10).toFixed(2)}" data-product-price="${element.price}" data-product-img="${element.image}"><img src="images/cart2.png" alt="cart"></button>
+            <p class="cost">${(element.price*10).toFixed(2)}₹</p>
+            <button class="add_to_cart" data-product-id="${element.id}" data-product-name="${element.title}" data-product-price="${element.price}" data-product-img="${element.image}"><img src="images/cart2.png" alt="cart"></button>
             </div>
-        </div>
-        `;
-    });
+            </div>
+            `;
+           
+        });
 
-    attachAddToCartEventListeners();
+        // Attach event listeners after rendering products
+         attachAddToCartEventListeners();
 }
 
 // Function to render star ratings
 function renderStar(rate) {
     let fullStars = Math.floor(rate);
     let stars = '';
-
+    
     for (let i = 0; i < fullStars; i++) {
         stars += `<img src="images/yellow_star.png" alt="star">`;
     }
-
+    
     return stars;
 }
 
@@ -82,6 +85,7 @@ men.addEventListener('click', () => {
 
 // Fetch and render women's products
 let women = document.querySelector('.women');
+
 women.addEventListener('click', () => {
     fetch('https://fakestoreapi.com/products')
     .then((response) => response.json())
@@ -114,11 +118,12 @@ electronic.addEventListener('click', () => {
 });
 
 // Attach event listeners to add to cart buttons
-function attachAddToCartEventListeners() {
+ function attachAddToCartEventListeners() {
     let add_to_cart_buttons = document.querySelectorAll('.add_to_cart');
     add_to_cart_buttons.forEach(button => {
         button.addEventListener('click', (e) => {
             e.preventDefault();
+            console.log("button.getAttribute('data-product-id'),",button.getAttribute('data-product-id'),)
             let product = {
                 id: button.getAttribute('data-product-id'),
                 name: button.getAttribute('data-product-name'),
@@ -126,43 +131,51 @@ function attachAddToCartEventListeners() {
                 img: button.getAttribute('data-product-img')
             };
 
+            
             let productArr = JSON.parse(localStorage.getItem('productArr') ?? "[]");
             productArr.push(product);
             localStorage.setItem('productArr', JSON.stringify(productArr));
             alert('Product added to cart successfully!');
         });
     });
-}
+ }
 
 // Initial function call to render all products
 allProduct();
 
 // Sidebar functionality
 document.querySelector('.filter_btn').addEventListener('click', () => {
-    let priceFilters = [...document.querySelectorAll('.checkbox:checked')].map(el => el.closest('span').textContent.trim());
+    let priceFilters = [...document.querySelectorAll('.checkbox:checked')].map(el => el.closest('span').textContent.trim());//.checkbox:checked: Selects only the checked checkboxes
+    
     let starRating = document.querySelector('.range').value;
-
+   
+    
     fetch('https://fakestoreapi.com/products')
     .then((response) => response.json())
     .then((data) => {
         let filteredData = data;
-
+        
         // Filter by price range
         if (priceFilters.length > 0) {
             filteredData = filteredData.filter(product => {
-                let price = product.price;
+                let price = (product.price*10).toFixed(2);
+               
                 return priceFilters.some(filter => {
-                    if (filter === "100₹ to 250₹" && price <= 25) return true;
-                    if (filter === "250₹ to 500₹" && price > 25 && price <= 50) return true;
-                    if (filter === "500₹ to 1000₹" && price > 50 && price <= 100) return true;
-                    if (filter === "₹1000 onwards" && price > 100) return true;
+                    
+                    if (filter === "50₹ to 250₹" && price <= 250) return true;
+                    if (filter === "250₹ to 500₹" && price > 250 && price <= 500) return true;
+                    if (filter === "500₹ to 1000₹" && price > 500 && price <= 1000) return true;
+                    if (filter === "1000₹ onwards" && price > 1000) return true;
                     return false;
                 });
             });
         }
 
         // Filter by star rating
-        filteredData = filteredData.filter(product => product.rating.rate >= starRating);
+        if (starRating > 0) {
+            filteredData = filteredData.filter(product => product.rating.rate >= starRating);
+            
+        }
 
         renderProduct(filteredData);
     });
@@ -173,7 +186,7 @@ document.querySelector('.filter_btn').addEventListener('click', () => {
 let searchInput = document.querySelector('.shop_search');
 searchInput.addEventListener('input', (e) => {
     let query = e.target.value.toLowerCase();
-
+    
     fetch('https://fakestoreapi.com/products')
     .then((response) => response.json())
     .then((data) => {
@@ -183,7 +196,7 @@ searchInput.addEventListener('input', (e) => {
 });
 
 
-// click On Logo Goto shope screen
+// click On Logo Goto home screen
 
 function clickOnLogoGotoHome(){
     window.location.href = './index.html';

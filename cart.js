@@ -5,7 +5,7 @@ if (currUser) {
     document.addEventListener('DOMContentLoaded', () => {
         let cartCardContainer = document.querySelector('.cart_html');
         let total = document.querySelector('.sub_total');
-        let productArr = JSON.parse(localStorage.getItem('productArr') ?? []);
+        let productArr = JSON.parse(localStorage.getItem('productArr') ?? '[]');
 
         function updateCart() {
             totalAmount = 0; // Reset totalAmount
@@ -52,25 +52,35 @@ if (currUser) {
 
         updateCart();
 
-        document.querySelector(".checkout").onclick = function (e) {
-            e.preventDefault();
 
-            var options = {
-                key: "rzp_test_l897UIyxOg4iXb",
-                amount: totalAmount * 100,
-                currency: "INR",
-                name: "Md Faizur Rahman",
-                description: "This is your order",
-                theme: {
-                    color: "#E6C744",
-                },
-                image: "https://www.mintformations.co.uk/blog/wp-content/u",
-            };
 
-            var rzpy1 = new Razorpay(options);
-            rzpy1.open();
-            // clear mycart - localStorage
-        };
+        // Select the checkout button and add a click event listener to it
+document.querySelector(".checkout").onclick = function (e) {
+    // Prevent the default action of the button click (e.g., form submission)
+    e.preventDefault();
+
+    // Define the options for the Razorpay payment
+    var options = {
+        key: "rzp_test_l897UIyxOg4iXb", // The Razorpay API key for the merchant
+        amount: totalAmount * 100, // The amount to be paid in the smallest currency unit (e.g., paise for INR)
+        currency: "INR", // The currency of the payment
+        name: "Md Faizur Rahman", // The name of the merchant or business
+        description: "This is your order", // A description of the order or payment
+        theme: {
+            color: "#E6C744", // The color theme of the payment window
+        },
+        image: "https://www.mintformations.co.uk/blog/wp-content/u", // A URL to the merchant's logo or image
+    };
+
+    // Create a new Razorpay payment object with the specified options
+    var rzpy1 = new Razorpay(options);
+    // Open the Razorpay payment window
+    rzpy1.open();
+    //  clear the shopping cart stored in localStorage after the payment is initiated
+    localStorage.removeItem('productArr');
+
+};
+
     });
 } else {
     alert('User does not exist');
